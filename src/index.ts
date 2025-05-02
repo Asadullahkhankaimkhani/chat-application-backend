@@ -3,7 +3,10 @@ import http from "http";
 import { Server } from "socket.io";
 import authRoutes from "./auth/routes";
 import dotenv from "dotenv";
+import connectDB from "./services/db";
+
 dotenv.config();
+connectDB(); // Connect to MongoDB
 
 const app = express();
 const server = http.createServer(app);
